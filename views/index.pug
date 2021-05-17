@@ -1,0 +1,19 @@
+html
+  head
+    style 
+      include ../styles/styles.css
+    link(rel="stylesheet", href="https://fonts.googleapis.com/css2?family=Roboto&display=swap")
+    title= '[🎲] Pseudozufallsgenerator'
+  body
+    h1= 'Pseudozufallsgenerator'
+    h2= randomString
+    br
+    br
+    br
+    h3= 'Eigenschaften:'
+    ul
+      li= 'Entropiequelle: 30-sekündige mp3-Datei'
+      li= 'Startwert: die sechs letzten Ziffern der aktuellen Unix-Zeit'
+      li= 'Länge des pseudozufälligen Strings: 20 Zeichen'
+    h3= 'Zum Erzeugen eines neuen Strings, Seite aktualisieren'
+      
