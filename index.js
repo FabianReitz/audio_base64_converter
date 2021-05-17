@@ -5,6 +5,9 @@ var app = express();
 
 const PORT = 3000;
 
+app.set('views', './views');
+app.set('view engine', 'pug');
+
 app.get('/', (req, res) => {
     // Source file
     var audio = fs.readFileSync('./guitar.mp3');
@@ -32,7 +35,8 @@ app.get('/', (req, res) => {
     // Get the 20 chars of the base 64 string at position
     var randomString = extractString(base64Audio, position, 20);
 
-    res.send(randomString);
+    res.render('index', { randomString: randomString });
+    // res.send(randomString);
 });
 
 app.listen(PORT, () => {
