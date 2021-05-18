@@ -1,7 +1,7 @@
 import express from 'express';
 import fs from 'fs';
 
-var app = express();
+const app = express();
 
 const PORT = 8080;
 
@@ -10,18 +10,18 @@ app.set('view engine', 'pug');
 
 app.get('/', (req, res) => {
     // Source file
-    var audio = fs.readFileSync('./guitar.mp3');
+    const audio = fs.readFileSync('./guitar.mp3');
 
     // Source file as base 64 string
-    var base64Audio = audio.toString('base64');
+    const base64Audio = audio.toString('base64');
 
     // Unix time
-    var timeStamp = Date.now();
+    const timeStamp = Date.now();
 
     // Get last six digits of Unix time
-    var lastDigets = timeStamp % 1000000;
+    const lastDigets = timeStamp % 1000000;
 
-    var position = lastDigets;
+    let position = lastDigets;
 
     if (lastDigets >= base64Audio.length) {
         position = lastDigets - base64Audio.length;
@@ -33,7 +33,7 @@ app.get('/', (req, res) => {
     }
 
     // Get the 20 chars of the base 64 string at position
-    var randomString = extractString(base64Audio, position, 20);
+    const randomString = extractString(base64Audio, position, 20);
 
     res.render('index', { randomString: randomString });
     // res.send(randomString);
