@@ -5,6 +5,7 @@ const app = express();
 
 const PORT = 8080;
 
+// Configure express to use pug
 app.set('views', './views');
 app.set('view engine', 'pug');
 
@@ -35,8 +36,8 @@ app.get('/', (req, res) => {
     // Get the 20 chars of the base 64 string at position
     const randomString = extractString(base64Audio, position, 20);
 
+    // Render response using
     res.render('index', { randomString: randomString });
-    // res.send(randomString);
 });
 
 app.listen(PORT, () => {
