@@ -12,11 +12,27 @@ h2 {
     text-align: center;
 }
 
-a {
+p {
     position: fixed;
-    left: 8px;
     bottom: 8px;
-    font-size: 24px;
+    left: 8px;
+    font-size: 20px;
+    color: #fafafa;
+}
+
+a {
     text-decoration: underline;
     color: #fafafa;
+}
+
+button {
+    background-color: #4f5881; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    font-size: 16px;
+    margin: 0 auto;
 }
